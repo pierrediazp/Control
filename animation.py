@@ -6,7 +6,7 @@ from matplotlib.collections import LineCollection, PolyCollection
 import sympy as sym
 
 
-def animate_convolution(x, h, y, t, tau, td, taud, interval=500):
+def animate_convolution(x, h, y, t, tau, td, taud, interval=750):
     """Plot animation of graphical representation of linear convolution.
 
     Parameters
@@ -35,10 +35,10 @@ def animate_convolution(x, h, y, t, tau, td, taud, interval=500):
         line_x.set_segments(p[0].get_segments())
 
         p = sym.plot(h.subs(t, t - tau).subs(t, ti), (tau, taud[0], taud[-1]),
-                     show=False)
+                     show=False,xlim=(-5,5))
         line_h.set_segments(p[0].get_segments())
 
-        p = sym.plot(y, (t, taud[0], taud[-1]), show=False)
+        p = sym.plot(y, (t, taud[0], taud[-1]), show=False,xlim=(-5,5))
         line_y.set_segments(p[0].get_segments())
 
         p = sym.plot(x.subs(t, tau)*h.subs(t, ti - tau), (tau, -5, 5),
@@ -81,8 +81,8 @@ def animate_convolution(x, h, y, t, tau, td, taud, interval=500):
         axi.spines['top'].set_color('none')
         axi.xaxis.set_ticks_position('bottom')
         axi.yaxis.set_ticks_position('left')
-        #axi.set_xlim((-3, 4))
-        #axi.set_ylim((-.1, 1.2))
+        axi.set_xlim((td[0], td[-1]))
+        axi.set_ylim((-.1, 1.2))
 
     ax[0].set_xlabel(r'$\tau$', horizontalalignment='right', x=1.0)
     ax[0].legend(loc='upper right')
