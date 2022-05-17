@@ -1,0 +1,34 @@
+Contributed by:
+	Favoreel
+	KULeuven
+	Departement Electrotechniek ESAT/SISTA
+	Kardinaal Mercierlaan 94
+	B-3001 Leuven
+	Belgium
+	wouter.favoreel@esat.kuleuven.ac.be
+Description:
+	Laboratory setup acting like a hair dryer. Air is fanned through a tube
+	and heated at the inlet. The air temperature is measured by a 
+	thermocouple at the output. The input is the voltage over the heating 
+	device (a mesh of resistor wires).
+Sampling:
+Number:
+	1000
+Inputs:
+	u: voltage of the heating device 
+Outputs:
+	y: output air temperature 
+References:
+	- Ljung L.  System identification - Theory for the 
+	  User. Prentice Hall, Englewood Cliffs, NJ, 1987.
+	
+	- Ljung. L. System Identification Toolbox. For Use 
+	   with Matlab. The Mathworks Inc., Mass., U.S.A., 1991.
+Properties:
+Columns:
+	Column 1: input u
+	Column 2: output y
+Category:
+	mechanical systems
+Where:
+

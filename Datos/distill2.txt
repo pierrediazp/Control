@@ -1,0 +1,44 @@
+ This file describes the data in the distill_col.dat file.
+1. Contributed by:
+	Jan Maciejowski
+	Cambridge University, Engineering Department
+	Trumpington Street, Cambridge
+	CB2 1PZ, England.
+	jmm@eng.cam.ac.uk
+2. Process/Description:
+	step response of a fractional distillation column 
+	(Simulation data supplied by SAST Ltd)
+        Steps are applied to each input, one at a time.
+	Input (a) is a step of amplitude 1.0
+	Input (b) is a step of amplitude 1.0 
+	Input (c) is a step of amplitude 1.0 
+3. Sampling time:
+	10 sec
+4. Number of samples:
+	250 samples
+5. Inputs:
+	a. input cooling temperature
+	b. reboiling temperature
+	c. pressure
+6. Outputs:
+	a. top product flow rate
+	b. C4 concentration
+7. References:
+	a. Maciejowski J.M., Parameter estimation of multivariable
+        systems using balanced realizations, in:
+        Bittanti,S. (ed), Identification,
+        Adaptation, and Learning, Springer (NATO ASI Series), 1996.
+	b. Chou C.T., Maciejowski J.M., System Identification Using
+	Balanced Parametrizations, IEEE Transactions on Automatic Control,
+	vol. 42, no. 7, July 1997, pp. 956-974.
+8. Known properties/peculiarities:
+
+9. Some MATLAB-code to retrieve the data
+	!gunzip distill_col.dat.Z
+	load distill_col.dat
+	u1y1=distill_col(:,2);  % step on input 1, response on output 1
+	u1y2=distill_col(:,3);  % step on input 1, response on output 2
+	u2y1=distill_col(:,4);  % etc
+	u2y2=distill_col(:,5);
+	u3y1=distill_col(:,6);
+	u3y2=distill_col(:,7);
